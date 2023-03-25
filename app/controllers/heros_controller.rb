@@ -11,5 +11,5 @@ class HerosController < ApplicationController
         else
           render json: { error: "Hero not found" }, status: :not_found
         end
-      end 
+      end
 end
