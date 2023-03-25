@@ -116,6 +116,10 @@ JSON data, along with the appropriate HTTP status code:
   "errors": ["validation errors"]
 }
 ```
+## LICENSE
+MIT license
+### Author
+Evalyne Mueke
 
 
 
