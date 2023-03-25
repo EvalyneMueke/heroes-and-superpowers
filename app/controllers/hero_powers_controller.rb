@@ -7,7 +7,8 @@ class HeroPowersController < ApplicationController
         hero_power.power = power
 
         if hero_power 
-            render json: hero ,include: :powers
+            render json: hero.to_json(only: [:id, :name, :super_name], 
+            include: [powers: { except: [:created_at, :updated_at]}])
         else 
             render json: { errors: hero_power.errors.full_messages }, status: :unprocessable_entity
         end
