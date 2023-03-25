@@ -1,25 +1,39 @@
-# README
+## Superheroes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Description
+For this assessment, you'll be working on an API for tracking heroes and their superpowers.
 
-Things you may want to cover:
+### Features
+ It features three models: 
+ - Hero
+ - Power
+ - HeroPower 
+ The Hero model has a name and a super_name. 
+ Power model has a name and a description. 
+ The HeroPower model serves as a join table between Hero and Power and it contains a hero_id, power_id and has a strength attribute.
 
-* Ruby version
+ ### Setup
+ #### Instalation
+ Clone the github repo `https://github.com/EvalyneMueke/heroes-and-superpowers`
 
-* System dependencies
+ To install the necessary dependancies run:
+ ` bundle install`
 
-* Configuration
+ Run the migrations and seeding the data:
+ `Rails db:migrate db:seed`
+ #### Server Running
+ Start the server with ` rails server`
 
-* Database creation
+ ### Routes 
+ Set up the following routes. Make sure to return JSON data in the format
+specified along with the appropriate HTTP verb.
 
-* Database initialization
+#### Get all the heros
+` GET/heros`
+Response:
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+
 
 * Deployment instructions
-![Screenshot from 2023-03-25 17-02-06](https://user-images.githubusercontent.com/117806266/227724014-4ca5e7c4-bf15-48a7-a591-5b22883281b5.png)
 
-* ...
