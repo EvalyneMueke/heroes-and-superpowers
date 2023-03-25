@@ -30,7 +30,92 @@ specified along with the appropriate HTTP verb.
 
 #### Get all the heros
 ` GET/heros`
+
 Response:
+![heros](images/image1.png)
+
+#### Get a specific hero
+`GET/heros/:id`
+If the `Hero` exists, return JSON data in the format below:
+
+![heros](images/image2.png)
+
+If the `Hero` does not exist, return the following JSON data, along with
+the appropriate HTTP status code:
+
+{   "error": "Hero not found" }
+
+#### Get all the Powers
+ `GET /powers`
+Return JSON data in the format below:
+
+![heros](images/image3.png)
+
+#### Get a specific powers
+ `GET /powers/:id`
+If the `Power` exists, return JSON data in the format below:
+
+![heros](images/image4.png)
+
+If the `Power` does not exist, return the following JSON data, along with
+the appropriate HTTP status code:
+
+```
+{
+  "error": "Power not found"
+}
+```
+#### Updating the description of a power
+`PATCH /powers/:id`
+This route should update an existing `Power`. It should accept an object with
+the following properties in the body of the request:
+
+![heros](images/image5.png)
+
+If the `Power` does not exist, return the following JSON data, along with
+the appropriate HTTP status code:
+
+```
+{
+  "error": "Power not found"
+}
+```
+
+If the `Power` is **not** updated successfully (does not pass validations),
+return the following JSON data, along with the appropriate HTTP status code:
+
+```
+{
+  "errors": ["validation errors"]
+}
+```
+
+#### Creating a new HeroPower
+This route should create a new `HeroPower` that is associated with an
+existing `Power` and `Hero`. It should accept an object with the following
+properties in the body of the request:
+
+```
+{
+  "strength": "Average",
+  "power_id": 1,
+  "hero_id": 3
+}
+```
+
+If the `HeroPower` is created successfully, send back a response with the data
+related to the `Hero`:
+
+![heros](images/image6.png)
+
+If the `HeroPower` is **not** created successfully, return the following
+JSON data, along with the appropriate HTTP status code:
+
+```
+{
+  "errors": ["validation errors"]
+}
+```
 
 
 
